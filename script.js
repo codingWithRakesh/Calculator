@@ -8,27 +8,20 @@ let num7 = document.getElementById('id7');
 let num8 = document.getElementById('id8');
 let num9 = document.getElementById('id9');
 let num0 = document.getElementById('id0');
-
 let plus = document.getElementById('idP');
 let minus = document.getElementById('idM');
 let division = document.getElementById('idD');
 let multiplication = document.getElementById('idm');
-
 let equals = document.getElementById('idE');
-
 let inputBox = document.getElementById('inputBox');
-
 let can = document.getElementById('can');
-
 let can1 = document.getElementById('can1');
-
 let parentheses = document.getElementById('parentheses');
 let parentheses2 = document.getElementById('parentheses2');
 let dot = document.getElementById('dot');
-let percent = document.getElementById('pers')
-
-let show = document.getElementById('show')
-let tan = document.querySelector('.tan')
+let percent = document.getElementById('pers');
+let show = document.getElementById('show');
+let tan = document.querySelector('.tan');
 
 num1.addEventListener('click',() => {
 	if (inputBox.value == 0) {
@@ -128,10 +121,20 @@ multiplication.addEventListener('click',() => {
 
 
 parentheses.addEventListener('click',() => {
-	inputBox.value = inputBox.value + '(';
+	if (inputBox.value == 0) {
+		inputBox.value = '(';
+	}
+	else {
+		inputBox.value = inputBox.value + '(';
+	}
 })
 parentheses2.addEventListener('click',() => {
-	inputBox.value = inputBox.value + ')';
+	if (inputBox.value == 0) {
+		inputBox.value = ')';
+	}
+	else {
+		inputBox.value = inputBox.value + ')';
+	}
 })
 dot.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '.';
@@ -141,26 +144,22 @@ percent.addEventListener('click',() => {
 })
 
 
-equals.addEventListener('click',equalsCal)
+equals.addEventListener('click',equalsCal);
 
-let storeValue = ""
-let storeValue2 = ""
+let storeValue = "";
+let storeValue2 = "";
 
 function equalsCal() {
-	let fir = inputBox.value
+	let fir = inputBox.value;
 	let total = eval(inputBox.value);
 	inputBox.value = total;
-
-	storeValue = `${fir} = ${total} <br>`
-	storeValue2 = storeValue + storeValue2
-	// console.log(storeValue2)
-
-	// console.log(`${fir} = ${total}`)
-	show.innerHTML = `${fir} = ${total}`	
+	storeValue = `${fir} = ${total} <br>`;
+	storeValue2 = storeValue + storeValue2;
+	show.innerHTML = `${fir} = ${total}`;	
 }
 
 
-can.addEventListener('click',deleteCha)
+can.addEventListener('click',deleteCha);
 
 function deleteCha() {
 	let final = Array.from(inputBox.value);
@@ -179,7 +178,6 @@ can1.addEventListener('click',() => {
 
 
 window.addEventListener('keydown',(e) => {
-	// console.log(e)
 	if (e.key == 'Enter') {
 		equalsCal();
 	}
@@ -309,51 +307,66 @@ window.addEventListener('keydown',(e) => {
 	
 })
 
-let keys = document.querySelector('.keys')
-let showBox = document.querySelector('.showBox')
-let mainBox = document.querySelector('.mainBox')
+let keys = document.querySelector('.keys');
+let showBox = document.querySelector('.showBox');
+let mainBox = document.querySelector('.mainBox');
 
 function checkWidth() {
 	if (mainBox.clientWidth <= 600) {
-		keys.classList.add('width95')	
-		showBox.classList.add('width95')
-		showBox.classList.add('height10')
+		keys.classList.add('width95');	
+		showBox.classList.add('width95');
+		showBox.classList.add('height10');
 	}
 	else {
-		keys.classList.remove('width95')
-		showBox.classList.remove('width95')
-		showBox.classList.remove('height10')
+		keys.classList.remove('width95');
+		showBox.classList.remove('width95');
+		showBox.classList.remove('height10');
 	}
 }
 
 mainBox.addEventListener('mouseover',() => {
-	checkWidth()
+	checkWidth();
 })
 
 mainBox.addEventListener('mousedown',() => {
-	checkWidth()
+	checkWidth();
 })
 
 mainBox.addEventListener('mousemove',() => {
-	checkWidth()
+	checkWidth();
 })
 
 mainBox.addEventListener('mouseup',() => {
-	checkWidth()
+	checkWidth();
 })
 
-let clear = document.querySelector('.clear')
+let clear = document.querySelector('.clear');
 
 clear.addEventListener('click',() => {
-	show.innerHTML = ""
+	show.innerHTML = "";
 })
 
 let icon = document.querySelector('.icon')
 
 icon.addEventListener('click',() => {
-	show.innerHTML = storeValue2
+	show.innerHTML = storeValue2;
 })
 
 window.addEventListener('load',() => {
-	mainBox.classList.add('scale1')
+	mainBox.classList.add('scale1');
+})
+
+let dark = true;
+let lightDark = document.getElementById('lightDark');
+lightDark.addEventListener('click', () => {
+	if (dark) {
+		document.body.classList.add('darkMode');
+		lightDark.innerHTML = '<i class="fa-solid fa-sun"></i>';
+		dark = false;
+	}
+	else {
+		document.body.classList.remove('darkMode');
+		lightDark.innerHTML = '<i class="fa-solid fa-moon "></i>';
+		dark = true;
+	}
 })

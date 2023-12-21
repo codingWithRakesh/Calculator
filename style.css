@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Roboto&display=swap');
+
+:root {
+  --firstCo: #FDF7E4;
+  --secondCo: #FAEED1;
+  --therdCo: #DED0B6;
+  --forthCo: #BBAB8C;
+  --fifthCo: #ffffff;
+  --colorF: #000000;
+
+}
+
+.darkMode{
+	--firstCo: #1B4242;
+    --secondCo: #1B4242;
+    --therdCo: #5C8374;
+    --forthCo: #092635;
+    --fifthCo: #9EC8B9;
+    --colorF: #ffffff;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -15,7 +35,7 @@
 	align-content: center;
 	gap: 1rem;
 	flex-wrap: wrap;
-	background: #DED0B6;
+	background: var(--therdCo);
 }
 
 ::-webkit-scrollbar {
@@ -52,7 +72,7 @@
 	flex-wrap: wrap;
 	align-content: flex-start;
 	padding: 2rem 1rem;
-	background: #FDF7E4;
+	background: var(--firstCo);
 	border-radius: 1rem;
 	overflow: auto;
 	resize: both;
@@ -63,6 +83,10 @@
 	height: 15%;
 	position: relative;
 /*	border: 1px solid black;*/
+}
+
+input{
+	background: var(--fifthCo);
 }
 
 .tan{
@@ -96,6 +120,7 @@
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 	overflow-y: auto;
 	position: relative;
+	background: var(--fifthCo);
 }
 
 .showBox::-webkit-scrollbar {
@@ -119,6 +144,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	background: var(--fifthCo);
 }
 
 .keys button{
@@ -191,13 +217,18 @@
 }
 
 .hover:hover{
-	background: #FAEED1;
+	background: var(--secondCo);
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 /*	color: #fff;*/
 }
 
 .BBAB8C{
-	background: #BBAB8C;
+	background: var(--forthCo);
+	color: var(--colorF);
+}
+
+.button{
+	background: var(--therdCo);
 }
 
 .clear{
@@ -221,6 +252,24 @@
 /*    transition-delay: 1s;*/
 }
 
+#lightDark{
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	cursor: pointer;
+	border-radius: 50%;
+	outline: none;
+	border: none;
+	height: 2rem;
+	width: 2rem;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	z-index: 2;
+}
+
+.white{
+	color: var(--colorF);
+}
+
 @media only screen and (max-width: 800px) {
   .keys{
   	width: 95%;
@@ -236,5 +285,15 @@
   .mainBox{
   	width: 90vw;
   	height: 90vh;
+  }
+
+  .mainBox::-webkit-scrollbar {
+	    width: 0.7rem;
+  }
+  .mainBox::-webkit-scrollbar-thumb {
+	      display:none;
+  }
+  .mainBox::-webkit-scrollbar-track {
+	     background: transparent;
   }
 }
