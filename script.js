@@ -23,100 +23,55 @@ let percent = document.getElementById('pers');
 let show = document.getElementById('show');
 let tan = document.querySelector('.tan');
 
+let check = true;
+
 num1.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 1;
-	}
-	else {
-		inputBox.value = inputBox.value + 1;
-	}
-})
+	allbutton(1);
+})	
 num2.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 2;
-	}
-	else {
-		inputBox.value = inputBox.value + 2;
-	}
+	allbutton(2);
 })
 num3.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 3;
-	}
-	else {
-		inputBox.value = inputBox.value + 3;
-	}
+	allbutton(3);
 })
 num4.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 4;
-	}
-	else {
-		inputBox.value = inputBox.value + 4;
-	}
+	allbutton(4);
 })
 num5.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 5;
-	}
-	else {
-		inputBox.value = inputBox.value + 5;
-	}
+	allbutton(5);
 })
 num6.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 6;
-	}
-	else {
-		inputBox.value = inputBox.value + 6;
-	}	
+	allbutton(6);
 })
 num7.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 7;
-	}
-	else {
-		inputBox.value = inputBox.value + 7;
-	}
+	allbutton(7);
 })
 num8.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 8;
-	}
-	else {
-		inputBox.value = inputBox.value + 8;
-	}
+	allbutton(8);
 })
 num9.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 9;
-	}
-	else {
-		inputBox.value = inputBox.value + 9;
-	}
+	allbutton(9);
 })
 num0.addEventListener('click',() => {
-	if (inputBox.value == 0) {
-		inputBox.value = 0;
-	}
-	else {
-		inputBox.value = inputBox.value + 0;
-	}
+	allbutton(0);
 })
-
 
 
 plus.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '+';
+	check = true;
 })
 minus.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '-';
+	check = true;
 })
 division.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '/';
+	check = true;
 })
 multiplication.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '*';
+	check = true;
 })
 
 
@@ -138,9 +93,11 @@ parentheses2.addEventListener('click',() => {
 })
 dot.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '.';
+	check = true;
 })
 percent.addEventListener('click',() => {
 	inputBox.value = inputBox.value + '%';
+	check = true;
 })
 
 
@@ -150,12 +107,13 @@ let storeValue = "";
 let storeValue2 = "";
 
 function equalsCal() {
+	check = false;
 	let fir = inputBox.value;
 	let total = eval(inputBox.value);
 	inputBox.value = total;
 	storeValue = `${fir} = ${total} <br>`;
 	storeValue2 = storeValue + storeValue2;
-	show.innerHTML = `${fir} = ${total}`;	
+	show.innerHTML = `${fir} = ${total}`;
 }
 
 
@@ -185,108 +143,64 @@ window.addEventListener('keydown',(e) => {
 		equalsCal();
 	}
 	else if (e.key == "Backspace") {
-		deleteCha()
+		deleteCha();
 	}
 	else if (e.key == "Delete") {
 		inputBox.value = 0;
 	}
 	else if (e.key == '1') {
-		if (inputBox.value == 0) {
-			inputBox.value = 1;
-		}
-		else {
-			inputBox.value = inputBox.value + 1;
-		}
+		allbutton(1);
 	}
 	else if (e.key == '2') {
-		if (inputBox.value == 0) {
-			inputBox.value = 2;
-		}
-		else {
-			inputBox.value = inputBox.value + 2;
-		}
+		allbutton(2);
 	}
 	else if (e.key == '3') {
-		if (inputBox.value == 0) {
-			inputBox.value = 3;
-		}
-		else {
-			inputBox.value = inputBox.value + 3;
-		}
+		allbutton(3);
 	}
 	else if (e.key == '4') {
-		if (inputBox.value == 0) {
-			inputBox.value = 4;
-		}
-		else {
-			inputBox.value = inputBox.value + 4;
-		}
+		allbutton(4);
 	}
 	else if (e.key == '5') {
-		if (inputBox.value == 0) {
-			inputBox.value = 5;
-		}
-		else {
-			inputBox.value = inputBox.value + 5;
-		}
+		allbutton(5);
 	}
 	else if (e.key == '6') {
-		if (inputBox.value == 0) {
-			inputBox.value = 6;
-		}
-		else {
-			inputBox.value = inputBox.value + 6;
-		}
+		allbutton(6);
 	}
 	else if (e.key == '7') {
-		if (inputBox.value == 0) {
-			inputBox.value = 7;
-		}
-		else {
-			inputBox.value = inputBox.value + 7;
-		}
+		allbutton(7);
 	}
 	else if (e.key == '8') {
-		if (inputBox.value == 0) {
-			inputBox.value = 8;
-		}
-		else {
-			inputBox.value = inputBox.value + 8;
-		}
+		allbutton(8);
 	}
 	else if (e.key == '9') {
-		if (inputBox.value == 0) {
-			inputBox.value = 9;
-		}
-		else {
-			inputBox.value = inputBox.value + 9;
-		}
+		allbutton(9);
 	}
 	else if (e.key == '0') {
-		if (inputBox.value == 0) {
-			inputBox.value = 0;
-		}
-		else {
-			inputBox.value = inputBox.value + 0;
-		}
+		allbutton(0);
 	}
 	else if (e.key == '+') {
 		inputBox.value = inputBox.value + '+';
+		check = true;
 	}
 	else if (e.key == '-') {
 		inputBox.value = inputBox.value + '-';
+		check = true;
 	}
 	else if (e.key == '*') {
 		inputBox.value = inputBox.value + '*';
+		check = true;
 	}
 	else if (e.key == '/') {
 		inputBox.value = inputBox.value + '/';
+		check = true;
 	}
 	else if (e.key == '%') {
 		inputBox.value = inputBox.value + '%';
+		check = true;
 	}
 	else if (e.key == '.') {
 		inputBox.value = inputBox.value + '.';
+		check = true
 	}
 	else if (e.key == ')') {
 		if (inputBox.value == 0) {
@@ -304,7 +218,6 @@ window.addEventListener('keydown',(e) => {
 			inputBox.value = inputBox.value + '(';
 		}
 	}
-	
 })
 
 let keys = document.querySelector('.keys');
@@ -344,12 +257,20 @@ let clear = document.querySelector('.clear');
 
 clear.addEventListener('click',() => {
 	show.innerHTML = "";
+	storeValue2 = "";
 })
 
 let icon = document.querySelector('.icon')
 
 icon.addEventListener('click',() => {
-	show.innerHTML = storeValue2;
+	if (check) {
+		show.innerHTML = storeValue2;
+		check = false;
+	}
+	else{
+		show.innerHTML = storeValue;
+		check = true;
+	}
 })
 
 window.addEventListener('load',() => {
@@ -370,3 +291,16 @@ lightDark.addEventListener('click', () => {
 		dark = true;
 	}
 })
+
+function allbutton(value) {
+	if (!check) {
+		inputBox.value = value;
+		check = true;
+	}
+	else if (inputBox.value == 0) {
+		inputBox.value = value;
+	}
+	else {
+		inputBox.value = inputBox.value + value;
+	}
+}
