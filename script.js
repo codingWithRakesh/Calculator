@@ -27,7 +27,7 @@ let check = true;
 
 num1.addEventListener('click',() => {
 	allbutton(1);
-})	
+})
 num2.addEventListener('click',() => {
 	allbutton(2);
 })
@@ -148,35 +148,8 @@ window.addEventListener('keydown',(e) => {
 	else if (e.key == "Delete") {
 		inputBox.value = 0;
 	}
-	else if (e.key == '1') {
-		allbutton(1);
-	}
-	else if (e.key == '2') {
-		allbutton(2);
-	}
-	else if (e.key == '3') {
-		allbutton(3);
-	}
-	else if (e.key == '4') {
-		allbutton(4);
-	}
-	else if (e.key == '5') {
-		allbutton(5);
-	}
-	else if (e.key == '6') {
-		allbutton(6);
-	}
-	else if (e.key == '7') {
-		allbutton(7);
-	}
-	else if (e.key == '8') {
-		allbutton(8);
-	}
-	else if (e.key == '9') {
-		allbutton(9);
-	}
-	else if (e.key == '0') {
-		allbutton(0);
+	else if (e.key >= '0' && e.key <= '9') {
+		allbutton(e.key);
 	}
 	else if (e.key == '+') {
 		inputBox.value = inputBox.value + '+';
